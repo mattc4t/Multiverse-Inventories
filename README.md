@@ -1,4 +1,8 @@
-##Multiverse-Inventories is no longer supported. We highly recommend switching to [Per World Inventory](https://www.spigotmc.org/resources/per-world-inventory.4482/) which supports importing your inventories from Multiverse-Inventories.
+##Multiverse-Inventories is no longer supported by the Multiverse Team. The Multiverse Team recommends switching to [Per World Inventory](https://www.spigotmc.org/resources/per-world-inventory.4482/) which supports importing your inventories from Multiverse-Inventories.
+
+This fork of Multiverse-Inventories is intended to address issues related to missing second-hand inventory in 1.10.2.  The intent of this fork is to provide a working build of Multiverse-Inventories for 1.10.2 servers.  No enhancements are planned at the present time, to   Multiverse-Inventories in this fork.
+
+The current state of code in this fork is work-in-progress...  I am not associated with the Multiverse Team, but honor their Copyright as highlighted below.  Contributors to this fork, including the Multiverse team who originated Multiverse-Inventories, are not liable for damages as expressed below.
 
 Copyright (c) 2011, The Multiverse Team All rights reserved.
 
