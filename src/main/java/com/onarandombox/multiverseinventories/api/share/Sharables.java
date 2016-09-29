@@ -120,6 +120,34 @@ public final class Sharables implements Shares {
             .serializer(new ProfileEntry(false, DataStrings.PLAYER_INVENTORY_CONTENTS),
                     new InventorySerializer(PlayerStats.INVENTORY_SIZE)).build();
 
+    public static final Sharable<ItemStack[]> OFFHAND = new Sharable.Builder<ItemStack[]> ("offhand_contents",
+    		ItemStack[].class, new SharableHandler<ItemStack[]>() {
+    		@Override
+    		public void updateProfile(PlayerProfile profile, Player player) {
+    			ItemStack[] offhandItemStack = new ItemStack[PlayerStats.OFFHAND_SIZE];
+    			offhandItemStack[0] = player.getInventory().getItemInOffHand();
+    			profile.set(OFFHAND, offhandItemStack);
+    		}
+    		
+    		@Override
+    		public boolean updatePlayer(Player player, PlayerProfile profile) {
+    			ItemStack[] value = profile.get(OFFHAND);
+    			if (value == null) {
+    				ItemStack[] air = new ItemStack[1];
+    				air = MinecraftTools.fillWithAir(new ItemStack[1]);
+    				player.getInventory().setItemInOffHand(air[0]);
+    				player.updateInventory();
+    				return false;
+    			}
+    			player.getInventory().setItemInOffHand(value[0]);
+    			player.updateInventory();
+    			return true;
+    		}
+    }).nmsNBTTag(DataStrings.NMS_NBT_OFFHAND)
+    .serializer(new ProfileEntry(false, DataStrings.PLAYER_OFFHAND_CONTENTS),
+    		new InventorySerializer(PlayerStats.OFFHAND_SIZE)).altName("offhand").build();
+   
+    
     /**
      * Sharing Armor.
      */
@@ -577,7 +605,7 @@ public final class Sharables implements Shares {
      * Grouping for inventory sharables.
      */
     public static final SharableGroup ALL_INVENTORY = new SharableGroup("inventory",
-            fromSharables(INVENTORY, ARMOR, ENDER_CHEST), "inv", "inventories");
+            fromSharables(INVENTORY, ARMOR, ENDER_CHEST, OFFHAND), "inv", "inventories");
 
     /**
      * Grouping for experience sharables.
@@ -616,7 +644,7 @@ public final class Sharables implements Shares {
      */
     public static final SharableGroup ALL_DEFAULT = new SharableGroup("all", fromSharables(HEALTH, ECONOMY,
             FOOD_LEVEL, SATURATION, EXHAUSTION, EXPERIENCE, TOTAL_EXPERIENCE, LEVEL, INVENTORY, ARMOR, BED_SPAWN,
-            MAXIMUM_AIR, REMAINING_AIR, FALL_DISTANCE, FIRE_TICKS, POTIONS, LAST_LOCATION, ENDER_CHEST), "*",
+            MAXIMUM_AIR, REMAINING_AIR, FALL_DISTANCE, FIRE_TICKS, POTIONS, LAST_LOCATION, ENDER_CHEST, OFFHAND), "*",
             "everything");
 
 

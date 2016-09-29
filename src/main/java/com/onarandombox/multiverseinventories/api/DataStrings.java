@@ -2,10 +2,12 @@ package com.onarandombox.multiverseinventories.api;
 
 import com.dumptruckman.minecraft.util.Logging;
 import com.onarandombox.multiverseinventories.util.MinecraftTools;
+
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -74,9 +76,17 @@ public class DataStrings {
      */
     public static final String PLAYER_INVENTORY_CONTENTS = "inventoryContents";
     /**
+     * Player offhand content identifier.
+     */
+    public static final String PLAYER_OFFHAND_CONTENTS = "offhandContent";
+    /**
      * NMS NBT Tag for Inventory.
      */
     public static final String NMS_NBT_INVENTORY = "Inventory";
+    /**
+     * NMS NBT Tag for Offhand.
+     */
+    public static final String NMS_NBT_OFFHAND = "Offhand";
     /**
      * Player armor contents identifier.
      */
@@ -383,7 +393,7 @@ public class DataStrings {
             return legacyParseInventory(inventoryString, inventorySize);
         }
     }
-
+    
     /**
      * @param inventory An inventory in object form to be parsed into an ItemStack array.
      * @param inventorySize The number of item slots in the inventory.
@@ -620,6 +630,20 @@ public class DataStrings {
         return jsonItems;
     }
 
+    
+    /**
+     * Converts an ItemStack into a String for easy persistence.
+     *
+     * @param items The items you wish to "string-i-tize".
+     * @return A string representation of an inventory.
+     */
+    public static JSONObject asJsonObject(ItemStack items) {
+        JSONObject jsonItems = new JSONObject();
+        if (items != null && items.getTypeId() != 0) {
+                jsonItems.put("0", items);
+        }
+        return jsonItems;
+    }
     private static String legacyValueOf(ItemStack[] items) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < items.length; i++) {
@@ -880,6 +904,8 @@ public class DataStrings {
     }
 
     private static final JSONParser JSON_PARSER = new JSONParser(JSONParser.USE_INTEGER_STORAGE);
+	
+	
     /**
      * This is meant to wrap an ItemStack so that it can easily be serialized/deserialized in String format.
      */
@@ -1030,6 +1056,7 @@ public class DataStrings {
         
  
     }
+
     
 }
 

@@ -13,6 +13,12 @@ public class PlayerStats {
      * Number of slots for armor for player.
      */
     public static final int ARMOR_SIZE = 4;
+
+    /**
+     * Number of slots for offhand inventory
+     */
+    public static final int OFFHAND_SIZE = 1;
+    
     /**
      * Number of slots in an ender chest.
      */
