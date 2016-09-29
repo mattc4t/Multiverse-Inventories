@@ -6,6 +6,7 @@ import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.Location;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -279,6 +280,35 @@ public class MockPlayerInventory implements PlayerInventory {
     public boolean containsAtLeast(final ItemStack itemStack, final int i) {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
+	
+	@Override
+	public void setItemInOffHand(ItemStack itemStack) {
+	}
+	
+	@Override
+	public void setItemInMainHand(ItemStack is) {}
+	
+	@Override
+	public ItemStack getItemInMainHand()	{ return null; }
+	
+	@Override
+	public ItemStack getItemInOffHand( ) { return null;	}
+	
+	
+	@Override
+	public void setExtraContents(ItemStack[] i) {}
+	
+	@Override
+	public ItemStack[] getExtraContents() { return null;}
+	
+	@Override 
+	public Location getLocation() { return null; }
+	
+	@Override
+	public void setStorageContents(ItemStack[] items) {}
+	
+	@Override
+	public ItemStack[] getStorageContents() {return null;}
 
     private static Map<String, Object> makeMap(ItemStack[] items) {
         Map<String, Object> contents = new LinkedHashMap<String, Object>(items.length);

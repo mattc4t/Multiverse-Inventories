@@ -3,6 +3,7 @@ package com.onarandombox.multiverseinventories.util;
 import com.onarandombox.multiverseinventories.api.PlayerStats;
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.attribute.*;
 import org.bukkit.conversations.Conversation;
 import org.bukkit.conversations.ConversationAbandonedEvent;
 import org.bukkit.entity.*;
@@ -930,20 +931,20 @@ public class MockPlayer implements Player {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
+   /*  @Override
     public Egg throwEgg() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
+    } */
 
-    @Override
+    /* @Override
     public Snowball throwSnowball() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
+    } */
 
-    @Override
+    /* @Override
     public Arrow shootArrow() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
+    } */
 
     @Override
     public <T extends Projectile> T launchProjectile(Class<? extends T> aClass) {
@@ -1281,4 +1282,137 @@ public class MockPlayer implements Player {
     public boolean getCanPickupItems() {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
+	
+	@Override 
+	public Spigot spigot() {
+		return null;
+	}
+	
+	@Override
+	public <T> void spawnParticle(Particle p1, double d1, double d2, double d3, int i1, double d4, double d5, double d6, double d7, T t1)
+	{ }
+	
+	@Override
+	public <T> void spawnParticle(Particle p1,Location l,int i1,double d1,double d2,double d3,double d4,T t) 
+	{
+	}
+	
+	@Override
+	public void spawnParticle(Particle p,double d1,double d2,double d3,int i,double d4,double d6,double d7,double d8) {}
+	
+	@Override
+	public void spawnParticle(Particle p,Location l,int i,double d1,double d2,double d3, double d4) {}
+	
+	@Override
+	public <T> void spawnParticle(Particle p,double d1,double d2,double d3,int i,double d4,double d5,double d6,T t) {}
+	
+	@Override
+	public  <T> void spawnParticle(Particle p,Location l,int i,double d1, double d2,double d3, T t) {}
+	
+	@Override
+	public void spawnParticle(Particle p,double d1,double d2,double d3,int i,double d4,double d5,double d6) {}
+	
+	@Override
+	public void spawnParticle(Particle p,Location l,int i,double d1,double d2,double d3) {}
+	
+	@Override
+	public <T> void spawnParticle(Particle p,double d1,double d2,double d3,int i,T t) {}
+	
+	@Override
+	public <T> void spawnParticle(Particle p,Location l,int i,T t) {}
+	
+	@Override
+	public void spawnParticle(Particle p,Location l,int i)
+	{}
+	
+	@Override
+	public void resetTitle(){}
+	
+	@Override
+	public void sendTitle(String s1,String s2) {}
+	
+	@Override
+	public void setSpectatorTarget(Entity e) {}
+	
+	@Override
+	public Entity getSpectatorTarget() { return null;}
+	
+	@Override
+	public void spawnParticle(Particle p1,double d1,double d2,double d3,int i) {}
+	
+	@Override
+	public void stopSound(String s) {}
+	
+	@Override 
+	public void stopSound(Sound s) {}
+	
+	@Override
+	public boolean isHandRaised() {return false;}
+	
+	@Override
+	public InventoryView openMerchant(Villager v,boolean b) {return null;}
+	
+	@Override
+	public MainHand getMainHand() {return null;}
+	
+	@Override
+	public boolean isCollidable() {return false;}
+	
+	@Override
+	public void setCollidable(boolean collidable) {}
+	
+	@Override
+	 public boolean hasAI() {return false;}
+	
+	@Override
+	public  void setAI(boolean ai) {}
+	
+	
+	@Override
+	public void setGliding(boolean gliding) {}
+	
+	@Override
+	public boolean isGliding() { return false;}
+	
+	@Override
+	public PotionEffect getPotionEffect(PotionEffectType type) {return null;}
+	
+	@Override
+	public List<Block> getLastTwoTargetBlocks(Set<Material> transparent, int maxDistance) { return null;}
+	
+	@Override
+	public Block getTargetBlock(Set<Material> transparent, int maxDistance) { return null;}
+	
+	@Override
+	public List<Block> getLineOfSight(Set<Material> transparent, int maxDistance) { return null;}
+	
+	@Override
+	public AttributeInstance getAttribute(Attribute attribute) {return null;}
+	
+	@Override
+	public  void setGravity(boolean gravity) {}
+	
+	@Override
+	public boolean hasGravity() { return false;}
+	
+	@Override
+	public void setSilent(boolean flag) {}
+	 
+	@Override
+	public boolean isSilent(){ return false;}
+	
+	@Override
+	public boolean isInvulnerable() {return false;}
+	
+	@Override
+	public void setInvulnerable(boolean flag) {}
+	
+	@Override
+	public boolean isGlowing() { return false;}
+	
+	@Override
+	public void setGlowing(boolean flag) {}
+
+	
+	
 }

@@ -405,15 +405,16 @@ public class DataStrings {
                 try {
                     index = Integer.valueOf(entry.getKey());
                 } catch (NumberFormatException e) {
-                    Logging.warning("Invalid key: " + entry.getKey() + " while parsing inventory");
+                    Logging.warning("Invalid key - NumberFormatException: " + entry.getKey() + " while parsing inventory");
                     continue;
                 }
                 if (index == -1) {
-                    Logging.warning("Invalid key: " + entry.getKey() + " while parsing inventory");
+                    Logging.warning("Invalid key - Index == -1: " + entry.getKey() + " while parsing inventory");
                     continue;
                 }
                 if (index > inventorySize) {
-                    Logging.warning("Invalid key: " + entry.getKey() + " while parsing inventory");
+                    Logging.warning("Invalid key - index > inventorySize: " + entry.getKey() + " while parsing inventory");
+                    Logging.warning("inventorySize:" + String.valueOf(inventorySize));
                     continue;
                 }
                 try {
@@ -467,15 +468,16 @@ public class DataStrings {
             try {
                 index = Integer.valueOf(key.toString());
             } catch (NumberFormatException e) {
-                Logging.warning("Invalid key: " + key + " while parsing inventory");
+                Logging.warning("Invalid key - NumberFormatException: " + key + " while parsing inventory");
                 continue;
             }
             if (index == -1) {
-                Logging.warning("Invalid key: " + key + " while parsing inventory");
+                Logging.warning("Invalid key - index == -1: " + key + " while parsing inventory");
                 continue;
             }
             if (index > inventorySize) {
-                Logging.warning("Invalid key: " + key + " while parsing inventory");
+                Logging.warning("Invalid key - index > inventorySize: " + key + " while parsing inventory");
+                Logging.warning("inventorySize:" + String.valueOf(inventorySize));
                 continue;
             }
             Object value = jsonItems.get(key);
