@@ -16,11 +16,15 @@
 	        <id>spigot-repo</id>
 	        <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 	    </repository>
-		<repository>
-		   <!-- DO NOT set id to "local" because it is reserved by Maven -->
-		   <id>lib</id>
-		   <url>file://${project.basedir}/lib</url>
-		</repository>
+        <repository>
+            <id>onarandombox</id>
+            <url>http://repo.onarandombox.com/content/groups/public</url>
+        </repository>	    
+<!-- 		<repository> -->
+<!-- 		   DO NOT set id to "local" because it is reserved by Maven -->
+<!-- 		   <id>lib</id> -->
+<!-- 		   <url>file://${project.basedir}/lib</url> -->
+<!-- 		</repository> -->
     </repositories>
 
     <pluginRepositories>
@@ -201,7 +205,7 @@ and adjust the build number accordingly -->
             <groupId>com.onarandombox.multiversecore</groupId>
             <artifactId>Multiverse-Core</artifactId>
             <version>2.5</version>
-            <scope>provided</scope>
+            <scope>provided</scope> 
         </dependency>
         <!-- End of Multiverse Core Dependency -->
         <!-- Start of Logging Dependency -->
@@ -218,6 +222,12 @@ and adjust the build number accordingly -->
             <version>1.0.9</version>
             <type>jar</type>
             <scope>compile</scope>
+			<exclusions>
+		        <exclusion>
+		          	<groupId>org.bukkit</groupId>
+					<artifactId>bukkit</artifactId>
+		        </exclusion>
+      		</exclusions>            
         </dependency>
         
         <!-- End of Logging Dependency -->
@@ -225,9 +235,15 @@ and adjust the build number accordingly -->
         <dependency>
             <groupId>com.feildmaster.lib</groupId>
             <artifactId>EnhancedConfiguration</artifactId>
-            <version>1.1.4</version>
+            <version>1.1.3</version>
             <type>jar</type>
             <scope>compile</scope>
+			<exclusions>
+		        <exclusion>
+		          	<groupId>org.bukkit</groupId>
+					<artifactId>bukkit</artifactId>
+		        </exclusion>
+      		</exclusions>            
         </dependency>
 
         <!-- End of ConfigurationLib Dependency -->
@@ -237,6 +253,12 @@ and adjust the build number accordingly -->
             <artifactId>Multiverse-Adventure</artifactId>
             <version>2.5</version>
             <scope>provided</scope>
+			<exclusions>
+		        <exclusion>
+		          	<groupId>org.bukkit</groupId>
+					<artifactId>bukkit</artifactId>
+		        </exclusion>
+      		</exclusions>                        
         </dependency>
         <!-- End of Multiverse Adventure Dependency -->
         <!-- Start of MultiInv Dependency -->
@@ -245,6 +267,13 @@ and adjust the build number accordingly -->
             <artifactId>MultiInv</artifactId>
             <version>3.0.6</version>
             <scope>provided</scope>
+			<exclusions>
+		        <exclusion>
+		          	<groupId>org.getspout</groupId>
+					<artifactId>spoutplugin</artifactId>
+		        </exclusion>
+      		</exclusions>            
+            
         </dependency>
         <!-- End of MultiInv Dependency -->
         <!-- Start of WorldInventories Dependency -->

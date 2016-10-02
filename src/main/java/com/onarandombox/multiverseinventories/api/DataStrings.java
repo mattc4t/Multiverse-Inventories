@@ -422,9 +422,10 @@ public class DataStrings {
                     Logging.warning("Invalid key - Index == -1: " + entry.getKey() + " while parsing inventory");
                     continue;
                 }
-                if (index > inventorySize) {
-                    Logging.warning("Invalid key - index > inventorySize: " + entry.getKey() + " while parsing inventory");
-                    Logging.warning("inventorySize:" + String.valueOf(inventorySize));
+				
+                if (index >= inventorySize) {
+                    Logging.fine("Invalid key - index > inventorySize: " + entry.getKey() + " while parsing inventory");
+                    Logging.fine("inventorySize:" + String.valueOf(inventorySize));
                     continue;
                 }
                 try {
@@ -485,7 +486,7 @@ public class DataStrings {
                 Logging.warning("Invalid key - index == -1: " + key + " while parsing inventory");
                 continue;
             }
-            if (index > inventorySize) {
+            if (index >= inventorySize) {
                 Logging.warning("Invalid key - index > inventorySize: " + key + " while parsing inventory");
                 Logging.warning("inventorySize:" + String.valueOf(inventorySize));
                 continue;
